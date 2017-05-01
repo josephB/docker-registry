@@ -2,7 +2,7 @@ version: 0.1
 log:
   accesslog:
     disabled: true
-  level: warn
+  level: debug
   formatter: text
   fields:
     service: registry
@@ -28,8 +28,10 @@ auth:
     realm: Registry Realm
     path: /auth/htpasswd
 http:
-  addr: localhost:5000
+  addr: 0.0.0.0:5000
+  net: tcp
   host: https://registry.jeph.tech:5000
+  secret: FxRtz2XRVnsAuziFkp2MyHnlmz6wc6
   tls:
     certificate: /certs/domain.crt
     key: /certs/domain.key
